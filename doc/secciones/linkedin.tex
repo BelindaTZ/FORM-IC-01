@@ -1,0 +1,27 @@
+\section{Arquitectura orientada a eventos en LinkedIn}
+
+\paragraph{Descripción y escala.}
+LinkedIn utiliza una arquitectura orientada a eventos para actualizar los datos
+que alimentan su sistema de recomendaciones. Las acciones de los usuarios
+se publican como eventos en Apache Kafka, y los flujos de Apache Beam los
+procesan para actualizar en segundos las variables que usan los modelos de
+recomendación. En 2023, LinkedIn reportó que su infraestructura de procesamiento
+en conjunto manejaba más de 4 billones de eventos diarios a través de más de
+3\,000 flujos de datos \cite{xia2023linkedin}.
+
+\paragraph{Motivación y arquitectura anterior.}
+Antes del cambio, LinkedIn calculaba por lotes las variables que alimentaban
+sus modelos de recomendación. Entre una acción del usuario y su efecto en
+las recomendaciones podían pasar entre 24 y 48 horas, lo que dificultaba
+reflejar sus intereses más recientes. LinkedIn adoptó un flujo orientado a
+eventos para actualizar esas variables a medida que llegaban nuevas acciones,
+sin esperar a la siguiente ejecución por lotes \cite{xia2023linkedin}.
+
+\paragraph{Beneficios y desafíos.}
+Con el nuevo flujo, los datos derivados de la actividad de los usuarios
+quedaban disponibles para los modelos de recomendación en pocos segundos.
+Un desafío fue que los equipos de IA tenían que integrar varias herramientas
+y encargarse del despliegue y monitoreo de los flujos. LinkedIn abordó este
+problema con Managed Beam, una plataforma interna que automatizó parte de
+esas tareas y permitió a los equipos centrarse en definir qué datos necesitaban
+sus modelos \cite{xia2023linkedin}.
