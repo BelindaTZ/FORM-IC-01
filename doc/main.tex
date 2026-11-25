@@ -11,7 +11,7 @@
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
 \DefineBibliographyStrings{spanish}{artno={artículo}}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,urlcolor=blue}
+\hypersetup{colorlinks=true,citecolor=black,linkcolor=black,urlcolor=blue}
 \urlstyle{same}
 
 % Permite compilar desde la carpeta del proyecto o desde doc.
@@ -31,7 +31,7 @@
 \input{\rutadoc secciones/linkedin.tex}
 \input{\rutadoc secciones/aplicacion-sgra.tex}
 
-% Muestra las referencias proporcionadas mientras se redactan las citas.
-\nocite{*}
+\clearpage
 \printbibliography[title={Referencias}]
+\input{\rutadoc secciones/declaracion-ia.tex}
 \end{document}

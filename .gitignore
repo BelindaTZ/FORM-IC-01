@@ -1,0 +1,24 @@
+# Archivos auxiliares y logs de LaTeX/Biber.
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+
+# Vistas previas y archivos temporales.
+/tmp/
+*.tmp
+*.bak
+*~

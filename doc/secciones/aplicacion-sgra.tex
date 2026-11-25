@@ -7,7 +7,12 @@ reintentarse sin repetir la reprogramación. Para evitar avisos duplicados,
 el módulo registraría qué destinatarios ya recibieron el aviso de ese evento.
 No incorporaría Apache Kafka ni Apache Beam, porque el volumen previsto de
 tutorías permite resolver este flujo con un mecanismo de publicación y consumo
-más sencillo de mantener.
+más sencillo de mantener. Cabane y Farias encontraron menor consumo de recursos
+en la arquitectura monolítica de su estudio; por ello, evaluaría el costo de
+distribuir el SGRA antes de ampliar su infraestructura \cite{cabane2024eda}.
+También definiría cómo mantener coherentes los horarios y los avisos: Bação y
+Guerreiro identifican la consistencia de datos y procesos como desafíos de los
+microservicios orientados a eventos \cite{bacao2026consistency}.
 
 \paragraph{Ejemplo de primera mano.}
 En el tablero de GitHub Projects que usé con mi equipo, al cerrarse un
